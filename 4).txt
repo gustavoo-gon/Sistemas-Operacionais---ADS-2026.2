@@ -1,0 +1,15 @@
+Bash 
+
+#!/bin/bash 
+clear 
+ 
+read -p "Digite o nome do arquivo : " nome 
+read -p "Digite o diretório de destino: " diretorio 
+ 
+if [ -e "$nome" ]; then 
+    mv "$nome" "$diretorio" 
+    echo "O item existe e foi movido"   
+else 
+    echo "O item não existe ou não foi encontrado" 
+fi 
+

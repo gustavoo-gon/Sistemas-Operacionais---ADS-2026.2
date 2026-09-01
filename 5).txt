@@ -1,0 +1,13 @@
+Bash 
+
+#!/bin/bash 
+clear 
+ 
+read -p "Digite o nome de usuario : " nome 
+ 
+if grep "$nome" /etc/passwd; then 
+    echo "O usuario existe"   
+else 
+    echo "O usuario NÃO existe"   
+fi 
+ 

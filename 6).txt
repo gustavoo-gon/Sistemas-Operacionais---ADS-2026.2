@@ -1,0 +1,38 @@
+#!/bin/bash 
+
+clear 
+
+  
+
+read -p "Digite o uma palavra : " palavra 
+
+read -p "Digite o nome de um arquivo: " arq 
+
+  
+
+if [ -e "$arq" ]; then 
+
+  
+
+	 echo "O arquivo existe" 
+
+	 
+
+	if grep "$palavra" "$arq";then 
+
+		echo "PALAVRA ENCONTRADA" 
+
+	else 
+
+		echo "PALAVRA NAO ENCONTRADA" 
+
+	fi 
+
+     
+
+else 
+
+    echo "O item não existe ou não foi encontrado" 
+
+fi 
+

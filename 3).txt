@@ -1,0 +1,14 @@
+#!/bin/bash 
+ 
+clear 
+ 
+read -p "Digite o nome do arquivo que você quer editar: " nome 
+read -p "Digite o novo nome do arquivo selecionado: " novo_nome 
+ 
+if [ -e "$nome" ]; then 
+    mv "$nome" "$novo_nome" 
+    echo "O item existe e foi renomeado"   
+else 
+    echo "O item não existe ou não foi encontrado" 
+fi 
+ 

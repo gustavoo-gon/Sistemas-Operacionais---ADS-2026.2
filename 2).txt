@@ -1,0 +1,16 @@
+#!/bin/bash
+
+clear
+
+read -p "Digite o nome do arquivo que voce quer deletar: " nome
+
+if [-e "$nome"]; then 
+    echo "O item existe"
+    
+    rm "$nome"
+
+else
+    echo "O item não existe"
+
+fi
+
