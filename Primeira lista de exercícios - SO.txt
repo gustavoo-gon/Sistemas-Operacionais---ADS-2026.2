@@ -1,0 +1,157 @@
+1)
+
+#!/bin/bash
+
+clear
+
+read -p "Informe o n1: " n1
+read -p "Informe o n1: " n2
+
+echo "MENU: "
+
+read -p "1=SOMA | 2=SUBTRAÇÃO | 3=MULT | 4=DIV | 5=SAIR: " c
+
+case $c in
+
+    1)
+        soma=$((n1+n2))
+        echo "a soma de $n1+$n2 é : $soma"
+        ;;
+
+    2)
+       sub=$((n1-n2))
+       echo "a subtração de $n1-$n2 é : $sub" 
+       ;;
+    3) 
+        mult=$((n1*n2))
+       echo "a multiplicação de $n1*$n2 é : $mult"
+       ;;
+    4)
+        div=$((n1/n2))
+       echo "a divisão de $n1/$n2 é : $div"
+       ;;
+
+    5)
+       echo "VOCE SAIU DO PROGRAMA"
+    *)
+        echo "A OPÇÃO DIGITADA NÃO EXISTE"
+        ;;
+esac
+    
+    
+
+2) ESTA INCOMPLETO
+
+#!/bin/bash
+
+clear
+
+read -p "Digite o nome do arquivo que voce quer deletar: " nome
+
+if [-e "$nome"]; then 
+    echo "O item existe"
+    
+    rm "$nome"
+
+else
+    echo "O item não existe"
+
+fi
+
+3)
+
+#!/bin/bash 
+ 
+clear 
+ 
+read -p "Digite o nome do arquivo que você quer editar: " nome 
+read -p "Digite o novo nome do arquivo selecionado: " novo_nome 
+ 
+if [ -e "$nome" ]; then 
+    mv "$nome" "$novo_nome" 
+    echo "O item existe e foi renomeado"   
+else 
+    echo "O item não existe ou não foi encontrado" 
+fi 
+ 
+
+4)
+
+Bash 
+
+#!/bin/bash 
+clear 
+ 
+read -p "Digite o nome do arquivo : " nome 
+read -p "Digite o diretório de destino: " diretorio 
+ 
+if [ -e "$nome" ]; then 
+    mv "$nome" "$diretorio" 
+    echo "O item existe e foi movido"   
+else 
+    echo "O item não existe ou não foi encontrado" 
+fi 
+
+
+5)
+
+
+Bash 
+
+#!/bin/bash 
+clear 
+ 
+read -p "Digite o nome de usuario : " nome 
+ 
+if grep "$nome" /etc/passwd; then 
+    echo "O usuario existe"   
+else 
+    echo "O usuario NÃO existe"   
+fi 
+ 
+
+Pode copiar e salvar no seu computador! Precisa de mais alguma coisa? 
+
+
+6)
+
+#!/bin/bash 
+
+clear 
+
+  
+
+read -p "Digite o uma palavra : " palavra 
+
+read -p "Digite o nome de um arquivo: " arq 
+
+  
+
+if [ -e "$arq" ]; then 
+
+  
+
+	 echo "O arquivo existe" 
+
+	 
+
+	if grep "$palavra" "$arq";then 
+
+		echo "PALAVRA ENCONTRADA" 
+
+	else 
+
+		echo "PALAVRA NAO ENCONTRADA" 
+
+	fi 
+
+     
+
+else 
+
+    echo "O item não existe ou não foi encontrado" 
+
+fi 
+
+ 
+
