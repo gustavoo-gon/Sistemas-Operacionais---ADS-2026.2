@@ -1,0 +1,14 @@
+#!/bin/bash
+echo "===== PAINEL DE INFORMAÇÕES DO SISTEMA ====="
+echo ""
+echo "Data atual:"
+date
+echo ""
+echo "Versão do kernel:"
+uname -r
+echo ""
+echo "Calendário do mês:"
+cal
+echo ""
+echo "Tempo de funcionamento:"
+uptime

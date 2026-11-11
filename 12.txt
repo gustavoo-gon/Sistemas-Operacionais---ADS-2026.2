@@ -1,0 +1,32 @@
+#!/bin/bash
+echo "Digite o nome do arquivo:"
+read arq
+if [ ! -f "$arq" ]; then
+  echo "O arquivo $arq não existe."
+else
+  echo "1 - 644"
+  echo "2 - 755"
+  echo "3 - 700"
+  echo "4 - Digitar outra permissão"
+  echo "Escolha uma opção:"
+  read op
+  if [ "$op" = "1" ]; then
+    perm=644
+  elif [ "$op" = "2" ]; then
+    perm=755
+  elif [ "$op" = "3" ]; then
+    perm=700
+  elif [ "$op" = "4" ]; then
+    echo "Digite a permissão:"
+    read perm
+  else
+    echo "Opção inválida."
+    exit
+  fi
+  chmod $perm "$arq"
+  if [ $? -eq 0 ]; then
+    echo "A permissão do arquivo $arq foi modificada para $perm."
+  else
+    echo "Não foi possível alterar a permissão."
+  fi
+fi

@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "A seguir estão os processos em execução no sistema:"
+echo ""
+ps aux
