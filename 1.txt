@@ -1,0 +1,29 @@
+#!/bin/bash
+echo "Digite o primeiro número:"
+read a
+echo "Digite o segundo número:"
+read b
+echo "1 - Soma"
+echo "2 - Subtração"
+echo "3 - Multiplicação"
+echo "4 - Divisão"
+echo "5 - Sair"
+echo "Escolha uma opção:"
+read op
+if [ "$op" = "1" ]; then
+  echo "Resultado: $(echo "$a + $b" | bc)"
+elif [ "$op" = "2" ]; then
+  echo "Resultado: $(echo "$a - $b" | bc)"
+elif [ "$op" = "3" ]; then
+  echo "Resultado: $(echo "$a * $b" | bc)"
+elif [ "$op" = "4" ]; then
+  if [ "$b" = "0" ]; then
+    echo "Não é possível dividir por zero."
+  else
+    echo "Resultado: $(echo "scale=2; $a / $b" | bc)"
+  fi
+elif [ "$op" = "5" ]; then
+  echo "Saindo..."
+else
+  echo "Opção inválida! Escolha de 1 a 5."
+fi

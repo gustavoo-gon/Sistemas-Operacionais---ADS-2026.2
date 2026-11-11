@@ -1,0 +1,32 @@
+#!/bin/bash
+op=0
+while [ "$op" != "7" ]; do
+  echo ""
+  echo "===== INFORMAÇÕES DO SISTEMA ====="
+  echo "1 - Data atual"
+  echo "2 - Versão do kernel"
+  echo "3 - Calendário"
+  echo "4 - Tempo de funcionamento"
+  echo "5 - Usuários conectados"
+  echo "6 - Processos em execução"
+  echo "7 - Sair"
+  echo "Escolha uma opção:"
+  read op
+  if [ "$op" = "1" ]; then
+    date
+  elif [ "$op" = "2" ]; then
+    uname -r
+  elif [ "$op" = "3" ]; then
+    cal
+  elif [ "$op" = "4" ]; then
+    uptime
+  elif [ "$op" = "5" ]; then
+    who
+  elif [ "$op" = "6" ]; then
+    ps aux
+  elif [ "$op" = "7" ]; then
+    echo "Saindo..."
+  else
+    echo "Opção inválida."
+  fi
+done

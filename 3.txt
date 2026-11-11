@@ -1,0 +1,11 @@
+#!/bin/bash
+echo "Digite o nome atual do arquivo:"
+read atual
+echo "Digite o novo nome do arquivo:"
+read novo
+if [ -f "$atual" ]; then
+  mv "$atual" "$novo"
+  echo "Arquivo renomeado de $atual para $novo."
+else
+  echo "O arquivo $atual não existe."
+fi

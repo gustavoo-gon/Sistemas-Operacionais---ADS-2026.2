@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "Digite o nome do arquivo que deseja remover:"
+read arq
+if [ -f "$arq" ]; then
+  rm "$arq"
+  echo "O arquivo $arq foi removido."
+else
+  echo "O arquivo $arq não foi encontrado."
+fi

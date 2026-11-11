@@ -1,0 +1,17 @@
+#!/bin/bash
+echo "Digite o nome do arquivo:"
+read arq
+echo "Digite o diretório de destino:"
+read dir
+if [ ! -f "$arq" ]; then
+  echo "O arquivo $arq não existe."
+elif [ ! -d "$dir" ]; then
+  echo "O diretório $dir não existe."
+else
+  mv "$arq" "$dir"
+  if [ $? -eq 0 ]; then
+    echo "Arquivo movido com sucesso para $dir."
+  else
+    echo "Não foi possível mover o arquivo."
+  fi
+fi
