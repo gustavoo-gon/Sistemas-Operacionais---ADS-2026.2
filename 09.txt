@@ -1,0 +1,16 @@
+#!/bin/bash
+echo "Digite o nome do primeiro arquivo:"
+read arq1
+echo "Digite o nome do segundo arquivo:"
+read arq2
+if [ -f "$arq1" ] && [ -f "$arq2" ]; then
+  diff "$arq1" "$arq2" > /dev/null
+  if [ $? -eq 0 ]; then
+    echo "Os arquivos são iguais."
+  else
+    echo "Os arquivos possuem diferenças:"
+    diff "$arq1" "$arq2"
+  fi
+else
+  echo "Um dos arquivos não existe."
+fi

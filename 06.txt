@@ -1,0 +1,17 @@
+#!/bin/bash
+echo "Digite a palavra que deseja procurar:"
+read palavra
+echo "Digite o nome do arquivo:"
+read arq
+if [ ! -f "$arq" ]; then
+  echo "O arquivo $arq não existe."
+else
+  grep -q "$palavra" "$arq"
+  if [ $? -eq 0 ]; then
+    echo "A palavra \"$palavra\" foi encontrada no arquivo."
+    echo "Linhas onde ela aparece:"
+    grep -n "$palavra" "$arq"
+  else
+    echo "A palavra \"$palavra\" não foi encontrada."
+  fi
+fi
